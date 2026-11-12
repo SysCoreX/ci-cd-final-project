@@ -1,31 +1,37 @@
-# CI/CD Tools and Practices Final Project Template
+# CI/CD Final Project
 
-This repository contains the template to be used for the Final Project for the Coursera course **CI/CD Tools and Practices**.
+**Project name:** ci-cd-final-project – CI/CD pipeline with GitHub Actions, Tekton and OpenShift
 
-## Usage
+This repository contains my final project for the Coursera course **CI/CD Tools and Practices**.
+It applies CI/CD concepts to a sample Python (Flask) application.
 
-This repository is to be used as a template to create your own repository in your own GitHub account. No need to Fork it as it has been set up as a Template. This will avoid confusion when making Pull Requests in the future.
+## Pipeline overview
 
-From the GitHub **Code** page, press the green **Use this template** button to create your own repository from this template.
+- **GitHub Actions** – lint with flake8 and run unit tests with nose on every push and pull request
+- **Tekton** – tasks for cleanup, linting (flake8) and unit testing (nose)
+- **OpenShift Pipelines** – automated pipeline that builds and deploys the application to an OpenShift cluster
 
-Name your repo: `ci-cd-final-project`.
+## Repository structure
+
+- `.github/workflows/workflow.yml` – GitHub Actions workflow
+- `.tekton/tasks.yml` – Tekton tasks (cleanup, flake8, nose)
+- `service/` – application source code
+- `tests/` – unit tests
+- `Dockerfile` – container image definition
 
 ## Setup
 
-After entering the lab environment you will need to run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
+After entering the lab environment, run the `setup.sh` script in the `./bin` folder to install the prerequisite software.
 
 ```bash
 bash bin/setup.sh
 ```
 
-Then you must exit the shell and start a new one for the Python virtual environment to be activated.
+Then exit the shell and start a new one for the Python virtual environment to be activated.
 
 ```bash
 exit
 ```
-
-## Tasks
-
 
 ## License
 
@@ -33,6 +39,4 @@ Licensed under the Apache License. See [LICENSE](/LICENSE)
 
 ## Author
 
-Skills Network
-
-## <h3 align="center"> © IBM Corporation 2023. All rights reserved. <h3/>
+<ide írd a neved>
