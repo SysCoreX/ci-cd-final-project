@@ -1,4 +1,4 @@
-name: CI Workflow
+name: CI workflow
 
 on:
   push:
@@ -8,15 +8,11 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
+    container: python:3.9-slim
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: |
@@ -29,4 +25,4 @@ jobs:
           flake8 service --count --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run unit tests with nose
-        run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=service
+        run: nosetests -v --with-spec --spec-color --with-coverage --cover-package=app
