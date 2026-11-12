@@ -39,4 +39,4 @@ Licensed under the Apache License. See [LICENSE](/LICENSE)
 
 ## Author
 
-<ide írd a neved>
+Kristof Muhari
